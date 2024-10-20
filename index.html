@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 80vh;
+            border: none;
+        }
+        .download-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF Viewer</h1>
+    <iframe src="yourfile.pdf" allow="fullscreen"></iframe>
+    <br>
+    <a href="yourfile.pdf" download>
+        <button class="download-button">Download PDF</button>
+    </a>
+</body>
+</html>
