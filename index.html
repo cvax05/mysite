@@ -3,35 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie Vaksman's Resume</title>
+    <title>Charlie K. Vaksman</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow: hidden; /* No page scrolling */
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0;
+            word-wrap: break-word;
         }
 
         .header-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 60%; /* Matches the width of the iframe */
+            width: 70%; /* Slightly smaller than the iframe width */
             margin: 0 auto;
             margin-bottom: 20px;
         }
 
         .headshot {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .headshot img {
@@ -40,24 +61,22 @@
             object-fit: cover;
         }
 
-        .h2-text {
+        .h3-text {
             flex-grow: 1;
             text-align: right;
             margin-left: 20px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
 
         iframe {
-            width: 80%; /* Set to 80% of the viewport width */
-            height: 80vh; /* Set to 80% of the viewport height */
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            width: 60%; /* Smaller width */
+            height: 60vh; /* Smaller height */
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            margin-top: 20px;
+            overflow: auto; /* Enable scrolling within the viewer */
         }
 
         .download-button {
@@ -69,10 +88,24 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         .download-button:hover {
             background-color: #45a049;
+        }
+
+        /* Modern style touch */
+        .header-section h3 {
+            text-align: right;
+            font-weight: normal;
+        }
+
+        .header-section, .pdf-container {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -81,10 +114,10 @@
 
     <div class="header-section">
         <div class="headshot">
-            <img src="charlie-vaksman01.jpg" alt="Headshot">
+            <img src="charlie-vaksman01.jpeg" alt="Headshot">
         </div>
-        <div class="h2-text">
-            <h2>Below is my resume for your review, which you can also download.</h2>
+        <div class="h3-text">
+            <h3>This is the H3 text wrapping properly.</h3>
         </div>
     </div>
 
