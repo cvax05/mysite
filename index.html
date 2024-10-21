@@ -49,21 +49,22 @@
             margin-right: 20px;
             text-align: justify;
             line-height: 1.5;
-            font-weight: 300; /* Updated to lighter weight */
+            font-weight: 300;
         }
 
         .header-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             width: 50%; /* Narrowed container */
-            height: 200px;
+            height: auto; /* Auto height to fit content */
             margin: 0 auto;
             margin-bottom: 40px;
             background-color: rgba(255, 255, 255, 0.5); /* Less transparent */
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-direction: column; /* Stack content vertically */
         }
 
         .headshot {
@@ -73,7 +74,7 @@
             overflow: hidden;
             border: 2px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-right: 40px; /* Increased padding between image and text */
+            margin: 0 auto 20px auto; /* Center the image and add margin below */
         }
 
         .headshot img {
@@ -85,6 +86,36 @@
 
         .headshot img:hover {
             transform: scale(1.05);
+        }
+
+        /* Styling for the booking data card */
+        .booking-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .booking-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .booking-card p {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .booking-card i {
+            margin-right: 10px;
         }
 
         /* PDF Viewer narrower and smaller */
@@ -135,7 +166,16 @@
         <div class="headshot">
             <img src="charlie-vaksman01.jpeg" alt="Headshot">
         </div>
-        <h3>“I look forward to speaking with you soon, and appreciate your time to help me navigate my career journey!”</h3> <!-- Updated text -->
+        <h3>“I look forward to speaking with you soon, and appreciate your time to help me navigate my career journey!”</h3>
+
+        <!-- Booking Data Card -->
+        <div class="booking-card">
+            <h4>Zoom or Phone Meeting</h4>
+            <p><i class="fas fa-user icon"></i> Charlie Vaksman</p>
+            <p><i class="fas fa-calendar-alt icon"></i> 10:30am - 11:00am, Tuesday, October 22, 2024</p>
+            <p><i class="fas fa-globe-americas icon"></i> Pacific Time - US & Canada</p>
+            <p><i class="fas fa-video icon"></i> Web conferencing details to follow.</p>
+        </div>
     </div>
 
     <!-- Adjusted iframe to narrower and smaller for more vertical display -->
@@ -146,5 +186,30 @@
             <i class="fas fa-download"></i> Download PDF
         </button>
     </a>
+
+    <!-- JavaScript to extract and display Calendly data (optional) -->
+    <script>
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const inviteeFullName = urlParams.get('invitee_full_name');
+            const eventStartTime = urlParams.get('event_start_time');
+
+            // Example of showing invitee name and booking time
+            if (inviteeFullName && eventStartTime) {
+                const bookingDetails = document.querySelector('.booking-card');
+                bookingDetails.innerHTML = `
+                    <h4>Zoom or Phone Meeting</h4>
+                    <p><i class="fas fa-user icon"></i> ${inviteeFullName}</p>
+                    <p><i class="fas fa-calendar-alt icon"></i> ${new Date(eventStartTime).toLocaleString()}</p>
+                    <p><i class="fas fa-globe-americas icon"></i> Pacific Time - US & Canada</p>
+                    <p><i class="fas fa-video icon"></i> Web conferencing details to follow.</p>
+                `;
+            }
+        }
+
+        // Call the function on page load
+        window.onload = getQueryParams;
+    </script>
+
 </body>
 </html>
