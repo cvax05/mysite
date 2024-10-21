@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie Vaksman's Resume</title>
+    <title>Charlie K. Vaksman's Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -27,8 +27,8 @@
         }
 
         h1 {
-            margin-bottom: 30px;
-            font-size: 2.2rem;
+            margin-bottom: 40px; /* Added more padding below H1 */
+            font-size: 2rem;
             color: #2c3e50;
         }
 
@@ -39,22 +39,23 @@
             word-wrap: break-word;
         }
 
+        /* Container for the headshot and H3 with transparency and better spacing */
         .header-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 70%;
             margin: 0 auto;
-            margin-bottom: 40px;
-            background-color: #f9fafb;
+            margin-bottom: 40px; /* Added more padding below container */
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .headshot {
-            width: 100px;
-            height: 100px;
+            width: 90px; /* Slightly smaller image */
+            height: 90px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #ccc;
@@ -72,23 +73,24 @@
             transform: scale(1.05);
         }
 
+        /* Reduced the gap between the image and H3 text */
         .h3-text {
             flex-grow: 1;
-            text-align: right;
-            margin-left: 20px;
+            text-align: left;
+            margin-left: 15px; /* Reduced gap */
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             align-items: center;
+            font-size: 1.1rem; /* Slightly smaller text */
         }
 
         iframe {
-            width: 60%;
-            height: 60vh;
+            width: 75%;
+            height: 85vh;
             border: none;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            overflow: auto;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .download-button {
@@ -125,14 +127,14 @@
     </style>
 </head>
 <body>
-    <h1>Charlie Vaksman's Resume</h1>
+    <h1>Charlie K. Vaksman</h1>
 
     <div class="header-section">
         <div class="headshot">
             <img src="charlie-vaksman01.jpeg" alt="Headshot">
         </div>
         <div class="h3-text">
-            <h3>This is the H3 text wrapping properly.</h3>
+            <h3>Experienced Corporate Lawyer Specializing in Mergers & Acquisitions</h3>
         </div>
     </div>
 
