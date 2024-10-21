@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie K. Vaksman</title>
+    <title>Charlie Vaksman's Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -12,27 +14,27 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             padding: 20px;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #f4f6f9, #eaeef3);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             height: 100vh;
-            overflow: hidden; /* No page scrolling */
+            overflow: hidden;
         }
 
         h1 {
-            margin-bottom: 10px;
+            margin-bottom: 30px;
             font-size: 2.2rem;
-            color: #333;
+            color: #2c3e50;
         }
 
         h3 {
             font-size: 1.2rem;
-            color: #555;
+            color: #34495e;
             margin: 0;
             word-wrap: break-word;
         }
@@ -41,9 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 70%; /* Slightly smaller than the iframe width */
+            width: 70%;
             margin: 0 auto;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .headshot {
@@ -59,6 +65,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .headshot img:hover {
+            transform: scale(1.05);
         }
 
         .h3-text {
@@ -71,46 +82,50 @@
         }
 
         iframe {
-            width: 60%; /* Smaller width */
-            height: 60vh; /* Smaller height */
+            width: 60%;
+            height: 60vh;
             border: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: auto; /* Enable scrolling within the viewer */
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            overflow: auto;
+            margin-top: 30px;
         }
 
         .download-button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease, background-color 0.3s ease;
         }
 
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #5DBE5A;
+            transform: scale(1.05);
         }
 
-        /* Modern style touch */
-        .header-section h3 {
-            text-align: right;
-            font-weight: normal;
+        .download-button i {
+            margin-right: 10px;
         }
 
-        .header-section, .pdf-container {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        /* Modern animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, .header-section, iframe, .download-button {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <h1>Charlie K. Vaksman</h1>
+    <h1>Charlie Vaksman's Resume</h1>
 
     <div class="header-section">
         <div class="headshot">
@@ -124,7 +139,9 @@
     <iframe src="charlie_vaksman_resume.pdf" allow="fullscreen"></iframe>
     <br>
     <a href="charlie_vaksman_resume.pdf" download>
-        <button class="download-button">Download PDF</button>
+        <button class="download-button">
+            <i class="fas fa-download"></i> Download PDF
+        </button>
     </a>
 </body>
 </html>
