@@ -4,33 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlie K. Vaksman's Resume</title>
-    <!-- Link to the Aptos font files you uploaded -->
+    <!-- Add Font Awesome for the icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link to the correct Aptos font files -->
     <style>
         @font-face {
             font-family: 'Aptos';
-            src: url('/fonts/aptos/Aptos-Regular.woff2') format('woff2'),
-                 url('/fonts/aptos/Aptos-Regular.woff') format('woff'),
-                 url('/fonts/aptos/Aptos-Regular.ttf') format('truetype');
+            src: url('/fonts/aptos/Aptos-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
             font-family: 'Aptos';
-            src: url('/fonts/aptos/Aptos-Bold.woff2') format('woff2'),
-                 url('/fonts/aptos/Aptos-Bold.woff') format('woff'),
-                 url('/fonts/aptos/Aptos-Bold.ttf') format('truetype');
+            src: url('/fonts/aptos/Aptos-Bold.ttf') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
 
         @font-face {
             font-family: 'Aptos';
-            src: url('/fonts/aptos/Aptos-Italic.woff2') format('woff2'),
-                 url('/fonts/aptos/Aptos-Italic.woff') format('woff'),
-                 url('/fonts/aptos/Aptos-Italic.ttf') format('truetype');
+            src: url('/fonts/aptos/Aptos-Italic.ttf') format('truetype');
             font-weight: normal;
             font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Aptos';
+            src: url('/fonts/aptos/Aptos-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Aptos';
+            src: url('/fonts/aptos/Aptos-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
         }
 
         * {
@@ -52,17 +63,12 @@
             overflow: hidden;
         }
 
-        h1 {
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: #2c3e50;
-        }
-
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #34495e;
-            margin: 0;
+            margin-bottom: 40px;
             word-wrap: break-word;
+            font-style: italic;
         }
 
         .header-section {
@@ -108,8 +114,9 @@
             font-size: 1.1rem;
         }
 
+        /* Adjusting iframe to full width */
         iframe {
-            width: 75%;
+            width: 100%;
             height: 85vh;
             border: none;
             border-radius: 15px;
@@ -144,24 +151,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1, .header-section, iframe, .download-button {
+        h3, .header-section, iframe, .download-button {
             animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <h1>Charlie K. Vaksman</h1>
+
+    <h3>“I’m a driven and resilient student-athlete at Princeton, passionate about finance and eager to connect with others as I navigate my career path.”</h3>
 
     <div class="header-section">
         <div class="headshot">
             <img src="charlie-vaksman01.jpeg" alt="Headshot">
         </div>
-        <div class="h3-text">
-            <h3>Experienced Corporate Lawyer Specializing in Mergers & Acquisitions</h3>
-        </div>
     </div>
 
-    <!-- Updated to remove split screen with #toolbar=0&navpanes=0 -->
+    <!-- Adjusted iframe to full width and removing sidebar -->
     <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0" allow="fullscreen"></iframe>
     <br>
     <a href="charlie_vaksman_resume.pdf" download>
