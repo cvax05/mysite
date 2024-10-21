@@ -30,20 +30,6 @@
             font-style: italic;
         }
 
-        @font-face {
-            font-family: 'Aptos';
-            src: url('/fonts/aptos/Aptos-ExtraBold.ttf') format('truetype');
-            font-weight: 800;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Aptos';
-            src: url('/fonts/aptos/Aptos-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -64,10 +50,11 @@
         }
 
         h3 {
-            font-size: 1.4rem;
-            color: #34495e;
+            font-size: 1.1rem;
+            color: #0070C0; /* Updated to requested color */
             margin-left: 20px;
             word-wrap: break-word;
+            font-weight: 400; /* Reduced font weight */
             font-style: italic;
         }
 
@@ -87,7 +74,7 @@
         .headshot {
             width: 90px;
             height: 90px;
-            border-radius: 50%;
+            border-radius: 50%; /* Ensures the image is a perfect circle */
             overflow: hidden;
             border: 2px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -104,10 +91,10 @@
             transform: scale(1.05);
         }
 
-        /* PDF Viewer full width fix for Chrome */
+        /* PDF Viewer at 70% width */
         iframe {
-            width: 100%;
-            height: 85vh;
+            width: 70%; /* 70% width of the page */
+            height: 90vh; /* Increased height for better vertical viewing */
             border: none;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -155,8 +142,8 @@
         <h3>“I’m a driven and resilient student-athlete at Princeton, passionate about finance and eager to connect with others as I navigate my career path.”</h3>
     </div>
 
-    <!-- Adjusted iframe to full width and removing sidebar -->
-    <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0" allow="fullscreen"></iframe>
+    <!-- Adjusted iframe to 70% width and ensuring PDF takes full viewer width -->
+    <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0&view=fitH" allow="fullscreen"></iframe>
     <br>
     <a href="charlie_vaksman_resume.pdf" download>
         <button class="download-button">
