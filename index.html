@@ -31,50 +31,50 @@
 
         body {
             font-family: 'Aptos', sans-serif;
-            text-align: center;
             padding: 20px;
             background: linear-gradient(135deg, #f4f6f9, #eaeef3);
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: flex-start;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
         }
 
-        h3 {
-            font-size: 1.2rem;
-            color: #0070C0;
-            margin-left: 20px;
-            margin-right: 20px;
-            text-align: justify;
-            line-height: 1.5;
-            font-weight: 300;
+        /* Responsive layout */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* Left column for desktop */
+        .left-column {
+            width: 40%;
+            padding-right: 20px;
+        }
+
+        /* Right column for desktop */
+        .right-column {
+            width: 55%;
         }
 
         .header-section {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            width: 50%; /* Narrowed container */
-            height: auto; /* Auto height to fit content */
-            margin: 0 auto;
-            margin-bottom: 40px;
-            background-color: rgba(255, 255, 255, 0.5); /* Less transparent */
+            background-color: rgba(255, 255, 255, 0.5);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            flex-direction: column; /* Stack content vertically */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .headshot {
-            width: 140px; /* Larger image */
+            width: 140px;
             height: 140px;
-            border-radius: 50%; /* Ensures the image is a perfect circle */
+            border-radius: 50%;
             overflow: hidden;
             border: 2px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 0 auto 20px auto; /* Center the image and add margin below */
+            margin-bottom: 20px;
         }
 
         .headshot img {
@@ -88,20 +88,14 @@
             transform: scale(1.05);
         }
 
-        /* Styling for the booking data card */
+        /* Booking details styling */
         .booking-card {
             background-color: #fff;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            text-align: left;
             width: 100%;
-        }
-
-        .booking-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            text-align: left;
         }
 
         .booking-card p {
@@ -110,22 +104,27 @@
             color: #555;
         }
 
-        .icon {
-            margin-right: 10px;
-        }
-
         .booking-card i {
             margin-right: 10px;
         }
 
-        /* PDF Viewer narrower and smaller */
+        h3 {
+            font-size: 1.2rem;
+            color: #0070C0;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: justify;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* PDF Viewer on desktop */
         iframe {
-            width: 60%; /* 60% width of the page */
-            height: 75vh; /* Smaller height for better vertical viewing */
+            width: 100%;
+            height: 80vh;
             border: none;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            margin-top: 20px;
         }
 
         .download-button {
@@ -150,59 +149,93 @@
             margin-right: 10px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
 
-        h3, .header-section, iframe, .download-button {
-            animation: fadeIn 0.6s ease-out;
+            .left-column, .right-column {
+                width: 100%;
+            }
+
+            .header-section {
+                flex-direction: row;
+                justify-content: flex-start;
+                text-align: left;
+            }
+
+            .headshot {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+
+            h3 {
+                margin-top: 10px;
+            }
+
+            .booking-card {
+                margin-bottom: 10px;
+                width: 70%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="header-section">
-        <div class="headshot">
-            <img src="charlie-vaksman01.jpeg" alt="Headshot">
+    <div class="container">
+        <!-- Left column with image and text -->
+        <div class="left-column">
+            <div class="header-section">
+                <div class="headshot">
+                    <img src="charlie-vaksman01.jpeg" alt="Headshot">
+                </div>
+                
+                <!-- Quote dynamically adjusted with first name -->
+                <div class="quote">
+                    <h3 id="quote">Thank you, <span id="inviteeName">Guest</span>, for helping me navigate my career journey!</h3>
+                </div>
+                
+                <!-- Booking details -->
+                <div class="booking-card">
+                    <p><i class="fas fa-calendar-alt"></i> 10:30am - 11:00am, Tuesday, October 22, 2024</p>
+                    <p><i class="fas fa-globe-americas"></i> Pacific Time - US & Canada</p>
+                    <p><i class="fas fa-video"></i> Web conferencing details to follow.</p>
+                </div>
+            </div>
         </div>
-        <h3>“I look forward to speaking with you soon, and appreciate your time to help me navigate my career journey!”</h3>
 
-        <!-- Booking Data Card -->
-        <div class="booking-card">
-            <h4>Zoom or Phone Meeting</h4>
-            <p><i class="fas fa-user icon"></i> Charlie Vaksman</p>
-            <p><i class="fas fa-calendar-alt icon"></i> 10:30am - 11:00am, Tuesday, October 22, 2024</p>
-            <p><i class="fas fa-globe-americas icon"></i> Pacific Time - US & Canada</p>
-            <p><i class="fas fa-video icon"></i> Web conferencing details to follow.</p>
+        <!-- Right column with PDF viewer -->
+        <div class="right-column">
+            <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0&view=fitH" allow="fullscreen"></iframe>
+            <br>
+            <a href="charlie_vaksman_resume.pdf" download>
+                <button class="download-button">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+            </a>
         </div>
     </div>
 
-    <!-- Adjusted iframe to narrower and smaller for more vertical display -->
-    <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0&view=fitH" allow="fullscreen"></iframe>
-    <br>
-    <a href="charlie_vaksman_resume.pdf" download>
-        <button class="download-button">
-            <i class="fas fa-download"></i> Download PDF
-        </button>
-    </a>
-
-    <!-- JavaScript to extract and display Calendly data (optional) -->
+    <!-- JavaScript to extract and display Calendly data -->
     <script>
         function getQueryParams() {
             const urlParams = new URLSearchParams(window.location.search);
-            const inviteeFullName = urlParams.get('invitee_full_name');
+            const inviteeFirstName = urlParams.get('invitee_first_name');
             const eventStartTime = urlParams.get('event_start_time');
 
-            // Example of showing invitee name and booking time
-            if (inviteeFullName && eventStartTime) {
+            // Inject first name into quote
+            if (inviteeFirstName) {
+                document.getElementById('inviteeName').textContent = inviteeFirstName;
+            }
+
+            // Update booking details dynamically
+            if (eventStartTime) {
                 const bookingDetails = document.querySelector('.booking-card');
+                const dateTime = new Date(eventStartTime).toLocaleString();
                 bookingDetails.innerHTML = `
-                    <h4>Zoom or Phone Meeting</h4>
-                    <p><i class="fas fa-user icon"></i> ${inviteeFullName}</p>
-                    <p><i class="fas fa-calendar-alt icon"></i> ${new Date(eventStartTime).toLocaleString()}</p>
-                    <p><i class="fas fa-globe-americas icon"></i> Pacific Time - US & Canada</p>
-                    <p><i class="fas fa-video icon"></i> Web conferencing details to follow.</p>
+                    <p><i class="fas fa-calendar-alt"></i> ${dateTime}</p>
+                    <p><i class="fas fa-globe-americas"></i> Pacific Time - US & Canada</p>
+                    <p><i class="fas fa-video"></i> Web conferencing details to follow.</p>
                 `;
             }
         }
