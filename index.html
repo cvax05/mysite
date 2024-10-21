@@ -51,18 +51,20 @@
 
         h3 {
             font-size: 1.1rem;
-            color: #0070C0; /* Updated to requested color */
+            color: #0070C0;
             margin-left: 20px;
-            word-wrap: break-word;
-            font-weight: 400; /* Reduced font weight */
-            font-style: italic;
+            margin-right: 20px;
+            text-align: justify;
+            line-height: 1.5;
+            font-weight: 400;
         }
 
         .header-section {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            width: 70%;
+            justify-content: center;
+            width: 50%; /* Narrowed container */
+            height: 200px; /* Larger height */
             margin: 0 auto;
             margin-bottom: 40px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -72,12 +74,13 @@
         }
 
         .headshot {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%; /* Ensures the image is a perfect circle */
+            width: 120px; /* Larger image */
+            height: 120px;
+            border-radius: 50%;
             overflow: hidden;
             border: 2px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-right: 20px; /* Added space between image and text */
         }
 
         .headshot img {
@@ -91,10 +94,10 @@
             transform: scale(1.05);
         }
 
-        /* PDF Viewer at 70% width */
+        /* PDF Viewer narrower and smaller */
         iframe {
-            width: 70%; /* 70% width of the page */
-            height: 90vh; /* Increased height for better vertical viewing */
+            width: 60%; /* 60% width of the page */
+            height: 75vh; /* Smaller height for better vertical viewing */
             border: none;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -142,7 +145,7 @@
         <h3>“I’m a driven and resilient student-athlete at Princeton, passionate about finance and eager to connect with others as I navigate my career path.”</h3>
     </div>
 
-    <!-- Adjusted iframe to 70% width and ensuring PDF takes full viewer width -->
+    <!-- Adjusted iframe to narrower and smaller for more vertical display -->
     <iframe src="charlie_vaksman_resume.pdf#toolbar=0&navpanes=0&view=fitH" allow="fullscreen"></iframe>
     <br>
     <a href="charlie_vaksman_resume.pdf" download>
